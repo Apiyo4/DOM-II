@@ -33,18 +33,55 @@ bigBtn[i].addEventListener('click', (event) => {
     classDestination.append(newPa);
 })
 } 
+// preventDefault
 navE.addEventListener('click', (event)=>{
     event.preventDefault();
     
 });
-
-// 4.dblClick
+//nested
+const funBox = document.querySelector('header h1');
+const introImg = document.querySelector('.intro img');
+const introH2 = document.querySelector('.intro h2');
 const introP = document.querySelector('.intro p');
+introH2.addEventListener('click', (event)=>{
+    introImg.style.borderRadius = '220px';
+    event.stopPropagation();
+    introImg.addEventListener('click', (event)=>{
+        introP.style.background =  'black';
+        introP.style.color = 'white';
+    })
+})
 
-introP.addEventListener('dblClick', (event)=>{
+
+
+// 4.dblclick
+
+
+introP.addEventListener('dblclick', (event)=>{
     event.target.style.color = 'red';
+    setTimeout(() => {
+        event.target.style.color = "";
+    }, 800);
    
 })
-//5.select
-// const h1Intro = document.querySelector('.intro h1');
-// h1Intro.addEventListener('select', even(event) =>)
+//5.mouseenter
+const firstH2 = document.querySelector('h2');
+
+firstH2.addEventListener('mouseenter', (event)=>{
+    event.target.style.background=' blue';
+    console.log("mouse entered");
+})
+//6.mouseleave
+firstH2.addEventListener('mouseleave', (event)=>{
+    event.target.style.background='';
+    console.log("mouse left");
+})
+// //7.select
+// const firstPTextC = document.querySelector('.text-content p');
+// firstPTextC.addEventListener('select', (event)=>{
+//     event.target.style.backgroundColor = 'purple';
+
+//     console.log(event.target);
+// })
+
+
