@@ -33,6 +33,10 @@ bigBtn[i].addEventListener('click', (event) => {
     classDestination.append(newPa);
 })
 } 
+navE.addEventListener('click', (event)=>{
+    event.preventDefault();
+    
+});
 
 // 4.dblClick
 const introP = document.querySelector('.intro p');
@@ -41,4 +45,6 @@ introP.addEventListener('dblClick', (event)=>{
     event.target.style.color = 'red';
    
 })
-
+//5.select
+// const h1Intro = document.querySelector('.intro h1');
+// h1Intro.addEventListener('select', even(event) =>)
